@@ -1,0 +1,112 @@
+{
+  "metadata": {
+    "title": "Naianderson Bruno — Desenvolvedor Front-End",
+    "description": "Portfólio de Naianderson Bruno, desenvolvedor front-end especializado em React, Next.js e TypeScript."
+  },
+  "header": {
+    "sections": "Seções",
+    "contactCta": "Fale comigo",
+    "themeToggle": "Alternar tema claro e escuro",
+    "languageSwitcher": "Idioma",
+    "nav": {
+      "experience": "Experiência",
+      "product": "Produto",
+      "stack": "Stack",
+      "education": "Formação"
+    }
+  },
+  "profile": {
+    "role": "Desenvolvedor Front-End",
+    "availability": "Disponível para novos projetos",
+    "tagline": "Interfaces que escalam, código que dura",
+    "summary": "Desenvolvedor front-end · React, Next.js e TypeScript",
+    "headlines": [
+      "construindo um dashboard white label",
+      "criando interfaces que escalam",
+      "tipando tudo com TypeScript",
+      "levando produtos para produção"
+    ]
+  },
+  "hero": {
+    "viewProjects": "Ver projetos",
+    "downloadCv": "Baixar CV",
+    "liveCta": "Quer ver ao vivo? Acesse o <link>{product}</link>"
+  },
+  "about": {
+    "label": "Sobre mim",
+    "statement": "Transformo regras de negócio complexas em interfaces <muted>claras, rápidas</muted> e fáceis de manter, <muted>do primeiro commit</muted> à produção."
+  },
+  "stats": {
+    "label": "Em números",
+    "experienceYears": "Anos de experiência",
+    "trainingHours": "Horas de formação",
+    "dailyTechnologies": "Tecnologias no dia a dia",
+    "liveProducts": "Produtos em produção"
+  },
+  "experience": {
+    "label": "Experiência",
+    "role": "Desenvolvedor Front-End",
+    "period": "Jun 2022 — Presente",
+    "stackLabel": "Stack utilizada",
+    "projects": {
+      "ADM": {
+        "title": "Dashboard Admin & White Label",
+        "description": "Manutenção e evolução da dashboard de administração e da plataforma white label com TypeScript e Next.js, garantindo escalabilidade para que diversos clientes gerenciem conteúdos e dados de forma eficiente e segura."
+      },
+      "COM": {
+        "title": "Comunidade interativa",
+        "description": "Rede social interna com postagens multimídia e sistema de reações dinâmicas no estilo LinkedIn, aumentando de forma significativa o engajamento e a retenção de alunos."
+      },
+      "PLY": {
+        "title": "Player de vídeo",
+        "description": "Player interno customizado sobre a biblioteca Plyr, com interface e funcionalidades adaptadas ao consumo de conteúdo dos alunos para uma experiência de aprendizado fluida."
+      },
+      "POS": {
+        "title": "Dashboard de pós-venda",
+        "description": "Fluxos autônomos de reembolso e cancelamento construídos com shadcn/ui e o design system da empresa, reduzindo a carga de solicitações manuais ao suporte."
+      }
+    }
+  },
+  "ownProduct": {
+    "label": "Produto próprio",
+    "role": "Sócio & Desenvolvedor Front-End",
+    "period": "Ago 2024 — Presente",
+    "summary": "SaaS de agenda e agendamento online 24h para profissionais de saúde, vitrine profissional, pagamento antecipado das consultas e gestão financeira em uma única plataforma.",
+    "privateRepository": "Repositório privado",
+    "projects": {
+      "LDG": {
+        "title": "Landing page",
+        "description": "Página de aquisição do produto, focada em conversão para o teste grátis, com apresentação do plano, prova social e dúvidas frequentes."
+      },
+      "PNL": {
+        "title": "Painel do profissional",
+        "description": "Principal desenvolvedor do painel onde o profissional gerencia agenda, consultas, locais de atendimento, assinatura do plano, extratos e saques. Arquitetura em camadas (domain, application, infrastructure, presentation), notificações em tempo real e testes automatizados."
+      }
+    }
+  },
+  "stack": {
+    "label": "Stack",
+    "groups": {
+      "languages": "Linguagens",
+      "frameworks": "Frameworks",
+      "stateAndData": "Estado & Dados",
+      "interface": "Interface"
+    }
+  },
+  "education": {
+    "label": "Formação",
+    "courses": {
+      "systemsTechnician": "Técnico em Desenvolvimento de Sistemas",
+      "reactArchitecture": "Arquitetura e Design de Aplicações React",
+      "advancedTypeScript": "TypeScript Avançado no Front-end"
+    }
+  },
+  "contact": {
+    "label": "Contato",
+    "title": "Vamos construir <muted>algo juntos?</muted>",
+    "subtitle": "Aberto a conversas sobre front-end, produtos digitais e novas oportunidades.",
+    "remote": "remoto",
+    "cta": "Entrar em contato",
+    "email": "E-mail"
+  }
+}

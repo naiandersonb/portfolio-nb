@@ -1,17 +1,20 @@
+import { getTranslations } from "next-intl/server";
 import { ownProduct } from "../_content/resume";
 import { SectionLabel, TechChip } from "./primitives";
 
-export function OwnProductSection() {
+export async function OwnProductSection() {
+  const [t, tExperience] = await Promise.all([getTranslations("ownProduct"), getTranslations("experience")]);
+
   return (
     <section id="produto" className="scroll-mt-16 py-16">
-      <SectionLabel>Produto próprio</SectionLabel>
+      <SectionLabel>{t("label")}</SectionLabel>
 
       <div className="mt-6">
         <h2 className="text-4xl font-medium tracking-[-0.03em] sm:text-5xl">{ownProduct.name}</h2>
         <p className="mt-2 text-muted">
-          {ownProduct.role} · {ownProduct.period}
+          {t("role")} · {t("period")}
         </p>
-        <p className="mt-4 max-w-3xl leading-relaxed text-muted">{ownProduct.summary}</p>
+        <p className="mt-4 max-w-3xl leading-relaxed text-muted">{t("summary")}</p>
       </div>
 
       <ol className="mt-8 grid gap-3 md:grid-cols-2">
@@ -26,9 +29,9 @@ export function OwnProductSection() {
               </span>
             </div>
             <div className="flex flex-1 flex-col gap-4 p-6">
-              <h3 className="text-xl font-medium tracking-[-0.01em]">{project.title}</h3>
-              <p className="leading-relaxed text-muted">{project.description}</p>
-              <ul className="flex flex-wrap gap-2" aria-label="Stack utilizada">
+              <h3 className="text-xl font-medium tracking-[-0.01em]">{t(`projects.${project.code}.title`)}</h3>
+              <p className="leading-relaxed text-muted">{t(`projects.${project.code}.description`)}</p>
+              <ul className="flex flex-wrap gap-2" aria-label={tExperience("stackLabel")}>
                 {project.stack.map((tech) => (
                   <TechChip key={tech}>{tech}</TechChip>
                 ))}
@@ -44,7 +47,7 @@ export function OwnProductSection() {
                     {project.link.label} ↗
                   </a>
                 ) : (
-                  <span className="text-muted">Repositório privado</span>
+                  <span className="text-muted">{t("privateRepository")}</span>
                 )}
               </div>
             </div>

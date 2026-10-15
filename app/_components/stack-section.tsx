@@ -1,12 +1,15 @@
+import { getTranslations } from "next-intl/server";
 import { skillGroups } from "../_content/resume";
 import { SectionLabel, TechChip } from "./primitives";
 
 const MARQUEE_TERMS = ["React", "Next.js", "TypeScript", "Tailwind", "TanStack Query", "Zustand"];
 
-export function StackSection() {
+export async function StackSection() {
+  const t = await getTranslations("stack");
+
   return (
     <section id="stack" className="scroll-mt-16 py-16">
-      <SectionLabel>Stack</SectionLabel>
+      <SectionLabel>{t("label")}</SectionLabel>
 
       <div className="mt-6 overflow-hidden py-2">
         <div className="animate-marquee flex w-max">
@@ -28,8 +31,8 @@ export function StackSection() {
 
       <div className="mt-6 grid gap-3 sm:grid-cols-2">
         {skillGroups.map((group) => (
-          <div key={group.label} className="rounded-3xl border border-line bg-surface p-6">
-            <h3 className="text-sm text-muted">{group.label}</h3>
+          <div key={group.key} className="rounded-3xl border border-line bg-surface p-6">
+            <h3 className="text-sm text-muted">{t(`groups.${group.key}`)}</h3>
             <ul className="mt-4 flex flex-wrap gap-2">
               {group.items.map((item) => (
                 <TechChip key={item}>{item}</TechChip>

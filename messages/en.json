@@ -1,0 +1,112 @@
+{
+  "metadata": {
+    "title": "Naianderson Bruno — Front-End Developer",
+    "description": "Portfolio of Naianderson Bruno, a front-end developer specialized in React, Next.js and TypeScript."
+  },
+  "header": {
+    "sections": "Sections",
+    "contactCta": "Get in touch",
+    "themeToggle": "Toggle light and dark theme",
+    "languageSwitcher": "Language",
+    "nav": {
+      "experience": "Experience",
+      "product": "Product",
+      "stack": "Stack",
+      "education": "Education"
+    }
+  },
+  "profile": {
+    "role": "Front-End Developer",
+    "availability": "Available for new projects",
+    "tagline": "Interfaces that scale, code that lasts",
+    "summary": "Front-end developer · React, Next.js and TypeScript",
+    "headlines": [
+      "building a white label dashboard",
+      "crafting interfaces that scale",
+      "typing everything with TypeScript",
+      "shipping products to production"
+    ]
+  },
+  "hero": {
+    "viewProjects": "View projects",
+    "downloadCv": "Download CV",
+    "liveCta": "Want to see it live? Visit <link>{product}</link>"
+  },
+  "about": {
+    "label": "About me",
+    "statement": "I turn complex business rules into interfaces that are <muted>clear, fast</muted> and easy to maintain, <muted>from the first commit</muted> to production."
+  },
+  "stats": {
+    "label": "By the numbers",
+    "experienceYears": "Years of experience",
+    "trainingHours": "Hours of training",
+    "dailyTechnologies": "Technologies used daily",
+    "liveProducts": "Products in production"
+  },
+  "experience": {
+    "label": "Experience",
+    "role": "Front-End Developer",
+    "period": "Jun 2022 — Present",
+    "stackLabel": "Tech stack",
+    "projects": {
+      "ADM": {
+        "title": "Admin & White Label Dashboard",
+        "description": "Maintaining and evolving the admin dashboard and the white label platform with TypeScript and Next.js, keeping it scalable so many clients can manage their content and data efficiently and securely."
+      },
+      "COM": {
+        "title": "Interactive community",
+        "description": "Internal social network with multimedia posts and LinkedIn-style dynamic reactions, significantly increasing student engagement and retention."
+      },
+      "PLY": {
+        "title": "Video player",
+        "description": "Custom internal player built on top of Plyr, with an interface and features tailored to how students consume content for a smooth learning experience."
+      },
+      "POS": {
+        "title": "After-sales dashboard",
+        "description": "Self-service refund and cancellation flows built with shadcn/ui and the company design system, reducing manual support requests."
+      }
+    }
+  },
+  "ownProduct": {
+    "label": "Own product",
+    "role": "Co-founder & Front-End Developer",
+    "period": "Aug 2024 — Present",
+    "summary": "24/7 scheduling and online booking SaaS for healthcare professionals: a professional showcase, upfront appointment payments and financial management in a single platform.",
+    "privateRepository": "Private repository",
+    "projects": {
+      "LDG": {
+        "title": "Landing page",
+        "description": "Acquisition page for the product, focused on converting visitors into free trials, with plan details, social proof and an FAQ."
+      },
+      "PNL": {
+        "title": "Professional dashboard",
+        "description": "Lead developer of the dashboard where professionals manage their schedule, appointments, service locations, plan subscription, statements and withdrawals. Layered architecture (domain, application, infrastructure, presentation), real-time notifications and automated tests."
+      }
+    }
+  },
+  "stack": {
+    "label": "Stack",
+    "groups": {
+      "languages": "Languages",
+      "frameworks": "Frameworks",
+      "stateAndData": "State & Data",
+      "interface": "Interface"
+    }
+  },
+  "education": {
+    "label": "Education",
+    "courses": {
+      "systemsTechnician": "Systems Development Technician",
+      "reactArchitecture": "React Application Architecture and Design",
+      "advancedTypeScript": "Advanced TypeScript for Front-end"
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Let's build <muted>something together?</muted>",
+    "subtitle": "Open to conversations about front-end, digital products and new opportunities.",
+    "remote": "remote",
+    "cta": "Get in touch",
+    "email": "Email"
+  }
+}
