@@ -74,7 +74,7 @@ export const ownProduct = {
   role: "Sócio & Desenvolvedor Front-End",
   period: "Ago 2024 — Presente",
   summary:
-    "SaaS de agenda e agendamento online 24h para profissionais de saúde, construído em sociedade com outros devs: vitrine profissional, pagamento antecipado das consultas e gestão financeira em uma única plataforma.",
+    "SaaS de agenda e agendamento online 24h para profissionais de saúde, vitrine profissional, pagamento antecipado das consultas e gestão financeira em uma única plataforma.",
   projects: [
     {
       code: "LDG",
