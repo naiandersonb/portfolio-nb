@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  --base: #111113;
+  --surface: #1c1c1f;
+  --surface-raised: #26262a;
+  --line: #2e2e33;
+  --dot: #2a2a2f;
+  --foreground: #ecebe3;
+  --muted: #8d8c86;
+  --accent: #52688f;
+  --accent-light: #93a6c9;
+  --accent-ink: #ecebe3;
+  --sand: #b1b0a6;
+  --sand-ink: #19191b;
+}
+
+@theme inline {
+  --color-base: var(--base);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-line: var(--line);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-accent-ink: var(--accent-ink);
+  --color-sand: var(--sand);
+  --color-sand-ink: var(--sand-ink);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--base);
+  background-image: radial-gradient(var(--dot) 1px, transparent 1px);
+  background-size: 28px 28px;
+  color: var(--foreground);
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.25;
+  }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+.animate-blink {
+  animation: blink 1.6s steps(1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-blink {
+    animation: none;
+  }
+}
