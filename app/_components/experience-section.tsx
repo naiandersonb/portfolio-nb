@@ -1,45 +1,35 @@
 import { experience } from "../_content/resume";
-import { DotMatrixIcon, SectionLabel } from "./primitives";
+import { SectionLabel, TechChip } from "./primitives";
 
 export function ExperienceSection() {
   return (
     <section id="experiencia" className="scroll-mt-16 py-16">
       <SectionLabel>Experiência</SectionLabel>
 
-      <div className="mt-6 flex flex-wrap items-end justify-between gap-4 border border-line bg-surface/60 p-4">
+      <div className="mt-6 flex flex-wrap items-end justify-between gap-4">
         <div>
-          <h2 className="text-4xl font-light uppercase tracking-tight sm:text-5xl">
-            {experience.company}
-          </h2>
-          <p className="mt-2 text-xs uppercase tracking-[0.2em] text-muted">
+          <h2 className="text-4xl font-medium tracking-[-0.03em] sm:text-5xl">{experience.company}</h2>
+          <p className="mt-2 text-muted">
             {experience.role} · {experience.period}
           </p>
         </div>
         <ul className="flex flex-wrap gap-2" aria-label="Stack utilizada">
           {experience.stack.map((tech) => (
-            <li key={tech} className="border border-line px-2 py-1 text-[11px] uppercase text-muted">
-              {tech}
-            </li>
+            <TechChip key={tech}>{tech}</TechChip>
           ))}
         </ul>
       </div>
 
-      <ol className="grid border-l border-line md:grid-cols-2">
-        {experience.projects.map((project, index) => (
-          <li key={project.code} className="flex flex-col gap-6 border-r border-b border-line p-4 sm:p-6">
-            <div className="flex items-start justify-between">
-              <DotMatrixIcon />
-              <span className="text-xs text-muted">{String(index + 1).padStart(2, "0")}</span>
-            </div>
-            <div className="flex flex-wrap items-end gap-3">
-              <span className="text-5xl font-light">{project.code}</span>
-              <span className="mb-1.5 bg-accent px-1.5 text-[11px] uppercase text-accent-ink">
-                {project.title}
+      <ol className="mt-8 grid gap-3 md:grid-cols-2">
+        {experience.projects.map((project) => (
+          <li key={project.code} className="flex flex-col gap-4 rounded-3xl border border-line bg-surface p-6">
+            <div className="flex items-center gap-3">
+              <span className="rounded-md border border-line bg-canvas px-2 py-0.5 font-mono text-[11px] text-muted">
+                {project.code}
               </span>
+              <h3 className="text-xl font-medium tracking-[-0.01em]">{project.title}</h3>
             </div>
-            <p className="border-t border-line pt-4 text-xs uppercase leading-relaxed tracking-wide text-muted">
-              {project.description}
-            </p>
+            <p className="leading-relaxed text-muted">{project.description}</p>
           </li>
         ))}
       </ol>

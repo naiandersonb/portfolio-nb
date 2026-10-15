@@ -1,61 +1,52 @@
 import { ownProduct } from "../_content/resume";
-import { DotMatrixIcon, SectionLabel } from "./primitives";
+import { SectionLabel, TechChip } from "./primitives";
 
 export function OwnProductSection() {
   return (
     <section id="produto" className="scroll-mt-16 py-16">
       <SectionLabel>Produto próprio</SectionLabel>
 
-      <div className="mt-6 flex flex-col gap-4 border border-line bg-surface/60 p-4">
-        <div>
-          <h2 className="text-4xl font-light uppercase tracking-tight sm:text-5xl">
-            {ownProduct.name}
-          </h2>
-          <p className="mt-2 text-xs uppercase tracking-[0.2em] text-muted">
-            {ownProduct.role} · {ownProduct.period}
-          </p>
-        </div>
-        <p className="max-w-3xl text-xs uppercase leading-relaxed tracking-wide text-muted">
-          {ownProduct.summary}
+      <div className="mt-6">
+        <h2 className="text-4xl font-medium tracking-[-0.03em] sm:text-5xl">{ownProduct.name}</h2>
+        <p className="mt-2 text-muted">
+          {ownProduct.role} · {ownProduct.period}
         </p>
+        <p className="mt-4 max-w-3xl leading-relaxed text-muted">{ownProduct.summary}</p>
       </div>
 
-      <ol className="grid border-l border-line md:grid-cols-2">
+      <ol className="mt-8 grid gap-3 md:grid-cols-2">
         {ownProduct.projects.map((project, index) => (
-          <li key={project.code} className="flex flex-col gap-6 border-r border-b border-line p-4 sm:p-6">
-            <div className="flex items-start justify-between">
-              <DotMatrixIcon />
-              <span className="text-xs text-muted">{String(index + 1).padStart(2, "0")}</span>
-            </div>
-            <div className="flex flex-wrap items-end gap-3">
-              <span className="text-5xl font-light">{project.code}</span>
-              <span className="mb-1.5 bg-accent px-1.5 text-[11px] uppercase text-accent-ink">
-                {project.title}
+          <li key={project.code} className="flex flex-col overflow-hidden rounded-3xl border border-line bg-surface">
+            <div
+              aria-hidden
+              className={`bg-aurora flex h-36 items-end p-5 ${index % 2 === 1 ? "hue-rotate-60" : ""}`}
+            >
+              <span className="rounded-md bg-white/30 px-2 py-0.5 font-mono text-[11px] text-white">
+                {project.code}
               </span>
             </div>
-            <p className="border-t border-line pt-4 text-xs uppercase leading-relaxed tracking-wide text-muted">
-              {project.description}
-            </p>
-            <ul className="flex flex-wrap gap-2" aria-label="Stack utilizada">
-              {project.stack.map((tech) => (
-                <li key={tech} className="border border-line px-2 py-1 text-[11px] uppercase text-muted">
-                  {tech}
-                </li>
-              ))}
-            </ul>
-            <div className="mt-auto text-[11px] uppercase tracking-[0.2em]">
-              {project.link ? (
-                <a
-                  href={project.link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-accent-light transition-colors hover:text-foreground"
-                >
-                  {project.link.label} ↗
-                </a>
-              ) : (
-                <span className="text-muted">Repositório privado</span>
-              )}
+            <div className="flex flex-1 flex-col gap-4 p-6">
+              <h3 className="text-xl font-medium tracking-[-0.01em]">{project.title}</h3>
+              <p className="leading-relaxed text-muted">{project.description}</p>
+              <ul className="flex flex-wrap gap-2" aria-label="Stack utilizada">
+                {project.stack.map((tech) => (
+                  <TechChip key={tech}>{tech}</TechChip>
+                ))}
+              </ul>
+              <div className="mt-auto pt-2 text-sm">
+                {project.link ? (
+                  <a
+                    href={project.link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium underline-offset-4 hover:underline"
+                  >
+                    {project.link.label} ↗
+                  </a>
+                ) : (
+                  <span className="text-muted">Repositório privado</span>
+                )}
+              </div>
             </div>
           </li>
         ))}

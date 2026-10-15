@@ -38,12 +38,12 @@ export function TypedHeadline({ headlines }: { headlines: string[] }) {
   }, [headline, headlines.length, isErasing, visibleLength]);
 
   return (
-    <p className="text-lg uppercase tracking-wider sm:text-2xl">
+    <p className="min-h-[1.5em] text-sm sm:text-base">
       <span className="sr-only">{headlines.join(", ")}</span>
       <span aria-hidden>
-        <span className="text-accent-light">&gt; </span>
+        <span className="mr-2">✦</span>
         {headline.slice(0, visibleLength)}
-        <span className="animate-blink ml-0.5 inline-block h-[1em] w-[0.55em] translate-y-[0.15em] bg-accent-light" />
+        <span className="animate-blink ml-0.5 inline-block h-[1.1em] w-px translate-y-[0.2em] bg-foreground" />
       </span>
     </p>
   );

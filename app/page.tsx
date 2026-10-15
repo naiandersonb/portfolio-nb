@@ -1,3 +1,4 @@
+import { AboutSection } from "./_components/about-section";
 import { ContactSection } from "./_components/contact-section";
 import { EducationSection } from "./_components/education-section";
 import { ExperienceSection } from "./_components/experience-section";
@@ -14,6 +15,7 @@ export default function Home() {
       <SiteHeader />
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 sm:px-6">
         <Hero />
+        <AboutSection />
         <StatsSection />
         <ExperienceSection />
         <OwnProductSection />
@@ -21,7 +23,7 @@ export default function Home() {
         <EducationSection />
         <ContactSection />
       </main>
-      <footer className="border-t border-line py-6 text-center text-[11px] uppercase tracking-[0.2em] text-muted">
+      <footer className="border-t border-line py-6 text-center text-sm text-muted">
         {profile.fullName} · {profile.role}
       </footer>
     </>

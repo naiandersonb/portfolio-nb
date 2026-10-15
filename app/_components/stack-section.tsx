@@ -1,5 +1,5 @@
 import { skillGroups } from "../_content/resume";
-import { Crosshair, SectionLabel } from "./primitives";
+import { SectionLabel, TechChip } from "./primitives";
 
 const MARQUEE_TERMS = ["React", "Next.js", "TypeScript", "Tailwind", "TanStack Query", "Zustand"];
 
@@ -8,17 +8,17 @@ export function StackSection() {
     <section id="stack" className="scroll-mt-16 py-16">
       <SectionLabel>Stack</SectionLabel>
 
-      <div className="mt-6 overflow-hidden bg-sand py-2 text-sand-ink">
+      <div className="mt-6 overflow-hidden py-2">
         <div className="animate-marquee flex w-max">
           {[0, 1].map((copy) => (
             <p
               key={copy}
               aria-hidden={copy === 1}
-              className="flex shrink-0 text-3xl font-light uppercase whitespace-nowrap sm:text-4xl"
+              className="flex shrink-0 text-4xl font-medium tracking-[-0.03em] whitespace-nowrap text-ghost sm:text-6xl"
             >
               {MARQUEE_TERMS.map((term) => (
-                <span key={term} className="px-4">
-                  {term} ·
+                <span key={term} className="px-5">
+                  {term} ✦
                 </span>
               ))}
             </p>
@@ -26,16 +26,13 @@ export function StackSection() {
         </div>
       </div>
 
-      <div className="grid border-l border-line sm:grid-cols-2">
+      <div className="mt-6 grid gap-3 sm:grid-cols-2">
         {skillGroups.map((group) => (
-          <div key={group.label} className="relative border-r border-b border-line p-4 sm:p-6">
-            <Crosshair className="absolute top-3 right-4" />
-            <h3 className="text-[11px] uppercase tracking-[0.2em] text-muted">{group.label}</h3>
-            <ul className="mt-4 flex flex-col gap-1">
+          <div key={group.label} className="rounded-3xl border border-line bg-surface p-6">
+            <h3 className="text-sm text-muted">{group.label}</h3>
+            <ul className="mt-4 flex flex-wrap gap-2">
               {group.items.map((item) => (
-                <li key={item} className="text-xl font-light uppercase sm:text-2xl">
-                  {item}
-                </li>
+                <TechChip key={item}>{item}</TechChip>
               ))}
             </ul>
           </div>

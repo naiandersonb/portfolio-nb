@@ -4,16 +4,30 @@ export const profile = {
   role: "Desenvolvedor Front-End",
   location: "Caxias, MA",
   headlines: [
-    "Desenvolvedor Front-End",
-    "React · Next.js · TypeScript",
-    "Dashboards & white label",
-    "Interfaces que escalam",
+    "construindo um dashboard white label",
+    "criando interfaces que escalam",
+    "tipando tudo com TypeScript",
+    "levando produtos para produção",
   ],
+  availability: "Disponível para novos projetos",
+  tagline: "Interfaces que escalam, código que dura",
+  summary: "Desenvolvedor front-end · React, Next.js e TypeScript",
   email: "naiandersonb.dev@gmail.com",
   linkedin: "https://www.linkedin.com/in/naianderson-bruno",
   github: "https://github.com/naiandersonb",
   resumePath: "/naianderson-bruno-front-end.pdf",
 };
+
+export const about = [
+  {
+    text: "Transformo regras de negócio complexas em interfaces ",
+    muted: false,
+  },
+  { text: "claras, rápidas", muted: true },
+  { text: " e fáceis de manter, ", muted: false },
+  { text: "do primeiro commit", muted: true },
+  { text: " à produção.", muted: false },
+];
 
 export const stats = [
   { label: "Anos de experiência", value: "4+" },
@@ -75,24 +89,60 @@ export const ownProduct = {
       title: "Painel do profissional",
       description:
         "Principal desenvolvedor do painel onde o profissional gerencia agenda, consultas, locais de atendimento, assinatura do plano, extratos e saques. Arquitetura em camadas (domain, application, infrastructure, presentation), notificações em tempo real e testes automatizados.",
-      stack: ["React", "Vite", "TanStack Query", "Zustand", "React Hook Form", "Zod", "MUI", "Vitest"],
+      stack: [
+        "React",
+        "Vite",
+        "TanStack Query",
+        "Zustand",
+        "React Hook Form",
+        "Zod",
+        "MUI",
+        "Vitest",
+      ],
       link: null,
     },
   ],
 };
 
 export const skillGroups = [
-  { label: "Linguagens", items: ["TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3"] },
+  {
+    label: "Linguagens",
+    items: ["TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3"],
+  },
   { label: "Frameworks", items: ["React.js", "Next.js", "Vite", "Astro"] },
-  { label: "Estado & Dados", items: ["TanStack Query", "Context API", "Zustand"] },
+  {
+    label: "Estado & Dados",
+    items: ["TanStack Query", "Context API", "Zustand"],
+  },
   {
     label: "Interface",
-    items: ["Tailwind", "shadcn/ui", "Chakra UI", "Material UI", "Styled Components"],
+    items: [
+      "Tailwind",
+      "shadcn/ui",
+      "Chakra UI",
+      "Material UI",
+      "Styled Components",
+    ],
   },
 ];
 
 export const education = [
-  { title: "Técnico em Desenvolvimento de Sistemas", school: "SENAI", hours: "1000H", year: "2021" },
-  { title: "Arquitetura e Design de Aplicações React", school: "Alura", hours: "35H", year: "2025" },
-  { title: "TypeScript Avançado no Front-end", school: "Alura", hours: "27H", year: "2025" },
+  {
+    title: "Técnico em Desenvolvimento de Sistemas",
+    school: "SENAI",
+    hours: "1000H",
+    year: "2021",
+  },
+  {
+    title: "Arquitetura e Design de Aplicações React",
+    school: "Alura",
+    hours: "35H",
+    year: "2025",
+  },
+  {
+    title: "TypeScript Avançado no Front-end",
+    school: "Alura",
+    hours: "27H",
+    year: "2025",
+  },
 ];

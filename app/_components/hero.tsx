@@ -1,61 +1,73 @@
-import { profile } from "../_content/resume";
-import { CursorHud } from "./cursor-hud";
-import { HeroDotField } from "./hero-dot-field";
-import { Inspectable } from "./inspectable";
-import { Highlight } from "./primitives";
+import { ownProduct, profile } from "../_content/resume";
+import { PillLink } from "./primitives";
 import { TypedHeadline } from "./typed-headline";
 
-export function Hero() {
-  const [firstName, lastName] = profile.name.split(" ");
+const LIVE_PRODUCT_LINK = ownProduct.projects.find(
+  (project) => project.link,
+)?.link;
 
+export function Hero() {
   return (
     <section
       id="topo"
-      className="relative isolate flex min-h-[calc(100svh-49px)] flex-col justify-between gap-12 py-8"
+      className="flex flex-col items-center pt-12 text-center sm:pt-16"
     >
-      <div aria-hidden className="absolute inset-y-0 left-1/2 -z-10 w-screen -translate-x-1/2 bg-base">
-        <HeroDotField />
+      <p className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
+        <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+        {profile.availability}
+      </p>
+
+      <h1 className="mt-5 max-w-3xl text-[clamp(2.75rem,8vw,5.5rem)] font-medium leading-[1.02] tracking-[-0.035em]">
+        {profile.tagline}
+      </h1>
+      <p className="mt-5 text-base text-muted sm:text-lg">
+        {profile.name} · {profile.summary}
+      </p>
+
+      <div className="mt-8 flex flex-wrap justify-center gap-2">
+        <PillLink href="#produto">Ver projetos</PillLink>
+        <PillLink href={profile.resumePath} variant="outline" download>
+          Baixar CV
+        </PillLink>
       </div>
 
-      <div className="flex items-center justify-between gap-4 text-[10px] uppercase tracking-[0.2em]">
-        <p className="flex items-center gap-2 text-muted">
-          <span className="animate-blink inline-block h-2 w-2 bg-accent-light" />
-          Modo inspeção<span className="hidden md:inline"> — passe o mouse</span>
-        </p>
-        <div className="hidden md:block">
-          <CursorHud />
+      <div className="bg-aurora mt-12 w-full rounded-[28px] p-5 text-left sm:p-8">
+        <span className="inline-flex items-center gap-2 text-sm text-white">
+          <span
+            aria-hidden
+            className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white/30"
+          >
+            ✦
+          </span>
+          nb/dev
+        </span>
+        <div className="mx-auto mt-10 max-w-md rounded-2xl bg-canvas p-4 shadow-[0_8px_30px_rgb(0_0_0/0.08)] sm:mt-14">
+          <TypedHeadline headlines={profile.headlines} />
+          <div className="mt-6 flex items-center justify-between">
+            <span className="font-mono text-[11px] text-muted">
+              tsx · next.js 16
+            </span>
+            <span
+              aria-hidden
+              className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-foreground text-inverse"
+            >
+              ↑
+            </span>
+          </div>
         </div>
-      </div>
-
-      <div className="flex flex-col gap-10">
-        <Inspectable label="<Name />" className="self-start">
-          <h1 className="text-[clamp(3rem,13.5vw,10.5rem)] font-light uppercase leading-[0.9] tracking-tight">
-            {firstName}{" "}
-            <br />
-            <span className="text-accent-light">{lastName}</span>
-          </h1>
-        </Inspectable>
-
-        <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-          <Inspectable label="<Role />" className="self-start">
-            <TypedHeadline headlines={profile.headlines} />
-          </Inspectable>
-
-          <Inspectable label="<Bio />" className="max-w-sm self-start md:self-auto">
-            <p className="text-xs uppercase leading-relaxed tracking-wider text-muted">
-              Construo interfaces <Highlight>escaláveis e performáticas</Highlight>{" "}
-              — de dashboards white label a comunidades interativas — com foco
-              em código limpo e boa experiência.
-            </p>
-          </Inspectable>
-        </div>
-      </div>
-
-      <div className="flex items-end justify-between text-[10px] uppercase tracking-[0.2em] text-muted">
-        <p>● {profile.location} — Brasil</p>
-        <a href="#numeros" className="transition-colors hover:text-foreground">
-          Scroll ↓
-        </a>
+        {LIVE_PRODUCT_LINK && (
+          <p className="mt-6 mb-4 text-center text-xs text-white/85 sm:mb-8">
+            Quer ver ao vivo? Acesse o{" "}
+            <a
+              href={LIVE_PRODUCT_LINK.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-white"
+            >
+              {ownProduct.name}
+            </a>
+          </p>
+        )}
       </div>
     </section>
   );

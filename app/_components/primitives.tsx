@@ -2,68 +2,43 @@ import type { ReactNode } from "react";
 
 export function SectionLabel({ children }: { children: ReactNode }) {
   return (
-    <span className="inline-block border border-line px-3 py-1.5 text-[11px] uppercase tracking-[0.2em] text-muted">
+    <span className="inline-flex items-center gap-2 rounded-md border border-line bg-surface px-2.5 py-1 font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
+      <span aria-hidden className="h-1.5 w-1.5 bg-muted" />
       {children}
     </span>
   );
 }
 
-export function Highlight({ children }: { children: ReactNode }) {
+export function TechChip({ children }: { children: ReactNode }) {
   return (
-    <mark className="bg-accent px-1 text-accent-ink">{children}</mark>
+    <li className="rounded-full border border-line px-3 py-1 text-xs text-muted">{children}</li>
   );
 }
 
-export function Crosshair({ className = "" }: { className?: string }) {
-  return (
-    <span aria-hidden className={`select-none text-xl font-light text-muted ${className}`}>
-      +
-    </span>
-  );
-}
+const PILL_VARIANTS = {
+  solid: "border-foreground bg-foreground text-inverse hover:opacity-85",
+  outline: "border-foreground text-foreground hover:bg-surface",
+};
 
-const DOT_POSITIONS = [0, 1, 2];
+type PillLinkProps = {
+  href: string;
+  variant?: keyof typeof PILL_VARIANTS;
+  download?: boolean;
+  children: ReactNode;
+};
 
-/** 3×3 grid of nodes wired by vertical traces, echoing the circuit motif. */
-export function DotMatrixIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg aria-hidden viewBox="0 0 40 40" className={`h-10 w-10 text-accent-light ${className}`}>
-      {DOT_POSITIONS.map((column) => (
-        <line
-          key={`trace-${column}`}
-          x1={6 + column * 14}
-          y1={6}
-          x2={6 + column * 14}
-          y2={34}
-          stroke="currentColor"
-          strokeWidth="1.5"
-          opacity="0.6"
-        />
-      ))}
-      {DOT_POSITIONS.flatMap((row) =>
-        DOT_POSITIONS.map((column) => (
-          <circle
-            key={`${row}-${column}`}
-            cx={6 + column * 14}
-            cy={6 + row * 14}
-            r="3.5"
-            fill="currentColor"
-          />
-        )),
-      )}
-    </svg>
-  );
-}
+export function PillLink({ href, variant = "solid", download, children }: PillLinkProps) {
+  const isExternal = href.startsWith("http");
 
-export function TickMarks({ count = 4 }: { count?: number }) {
   return (
-    <div aria-hidden className="flex flex-col gap-2">
-      {Array.from({ length: count }, (_, index) => (
-        <span
-          key={index}
-          className={`block h-px w-3 ${index % 2 === 0 ? "bg-accent" : "bg-line"}`}
-        />
-      ))}
-    </div>
+    <a
+      href={href}
+      download={download}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
+      className={`inline-flex items-center justify-center rounded-full border px-5 py-2.5 text-sm font-medium transition ${PILL_VARIANTS[variant]}`}
+    >
+      {children}
+    </a>
   );
 }
